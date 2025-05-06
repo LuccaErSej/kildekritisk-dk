@@ -1,0 +1,72 @@
+/* Custom styles to complement Tailwind CSS */
+
+/* Smooth transitions for modal and sidebar */
+.modal-transition {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Custom background gradient overlay */
+.hero-background {
+    background-image: linear-gradient(rgba(18, 18, 18, 0.92), rgba(18, 18, 18, 0.95));
+    background-size: cover;
+    background-position: center;
+}
+
+/* Error message animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error-shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Custom scrollbar for history sidebar */
+#historyList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#historyList::-webkit-scrollbar-track {
+    background: #2c2c2c;
+}
+
+#historyList::-webkit-scrollbar-thumb {
+    background: #6b6b6b;
+    border-radius: 3px;
+}
+
+#historyList::-webkit-scrollbar-thumb:hover {
+    background: #9e9e9e;
+}
+
+/* Ensure history list doesn't overflow */
+#historyList {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+/* Focus styles for better accessibility */
+:focus {
+    outline: 2px solid #A3B18A;
+    outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Ensure buttons have pointer cursor */
+button {
+    cursor: pointer;
+}
+
+/* Disable transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
